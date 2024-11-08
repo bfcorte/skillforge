@@ -1,96 +1,191 @@
 /* Hero Section */
 .hero-section {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    min-height: 50vh; /* Ajuste para 90% da altura da tela */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-  }
-  .hero-overlay {
-    background-color: rgba(0, 0, 0, 0.4);
-    position: absolute;     /* Garante que o overlay cubra toda a seção */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
 }
-  
-  /* Botão de CTA */
-  .cta-button {
-    background-color: #fcd34d;
-    color: #4c51bf;
-    padding: 1.5rem 3.5rem;  /* Aumenta o tamanho do botão */
-    border-radius: 9999px;
-    font-weight: bold;
-    font-size: 1.25rem;      /* Aumenta o tamanho da fonte */
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2); /* Sombra mais intensa */
-    transition: transform 0.3s;
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Botão de CTA */
+.cta-button {
+  background-color: #fcd34d;
+  color: #4c51bf;
+  padding: 1.5rem 3.5rem;
+  border-radius: 9999px;
+  font-weight: bold;
+  font-size: 1.25rem;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
 }
 .cta-button:hover {
-    background-color: #fbbf24;
-    transform: scale(1.1);  /* Aumenta o efeito de hover */
+  background-color: #fbbf24;
+  transform: scale(1.1);
 }
+
+/* Estilos dos Cards */
+.flip-card {
+  perspective: 1000px;
+}
+.flip-card-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flip-card:hover .flip-card-inner, .flip-card:focus .flip-card-inner {
+  transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+.flip-card-back {
+  transform: rotateY(180deg);
+  background-color: #f3f4f6;
+  color: #4b5563;
+  overflow-y: auto;
+}
+
+/* Imagens e Ícones */
+.instructor-photo {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 9999px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+.icon {
+  width: 6rem;
+  height: 6rem;
+}
+
+/* Espaçamento e Borda entre as Seções */
+.divisor {
+  height: 2px;
+  width: 60%;
+  background-color: #d1d5db;
+  margin: 3rem auto;
+}
+
+/* Estilo de Fundo para "O Que Você Vai Aprender" */
+.o-que-aprender {
+  background-color: #f3f4f6;
+}
+
+/* Seção dos Instrutores */
+.sobre-instrutores {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-direction: row; /* Imagem e texto lado a lado por padrão */
+}
+
+/* Media Queries para Responsividade */
+
+/* Ajustes para Tablets e Telas Menores */
+@media (max-width: 768px) {
+  .hero-section {
+      min-height: 60vh;
+  }
   
-  /* Estilos dos Cards */
-  .flip-card {
-    perspective: 1000px;
-  }
-  .flip-card-inner {
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
-  }
-  .flip-card:hover .flip-card-inner, .flip-card:focus .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  .flip-card-front, .flip-card-back {
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 0.75rem;
-    padding: 1.5rem;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  .flip-card-back {
-    transform: rotateY(180deg);
-    background-color: #f3f4f6;
-    color: #4b5563;
-    overflow-y: auto;
+  .hero-overlay h1 {
+      font-size: 4rem;
   }
   
-  /* Imagens e Ícones */
-  .instructor-photo {
-    width: 18rem;
-    height: 18rem;
-    border-radius: 9999px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  .icon {
-    width: 6rem;  /* Aumenta a largura do ícone */
-    height: 6rem; /* Aumenta a altura do ícone */
+  .hero-overlay p {
+      font-size: 1.5rem;
+      padding: 0 1rem;
   }
 
-  /* Espaçamento e Borda entre as Seções */
-.divisor {
-    height: 2px;
-    width: 60%;
-    background-color: #d1d5db; /* Cor de borda leve */
-    margin: 3rem auto;         /* Centraliza e espaça o divisor */
+  .cta-button {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+  }
+
+  .o-que-aprender .grid-cols-2 {
+      grid-template-columns: 1fr; /* Muda para uma coluna em telas menores */
+  }
+
+  .instructor-photo {
+      width: 12rem;
+      height: 12rem;
+  }
+
+  /* Altera a disposição da seção dos Instrutores */
+  .sobre-instrutores {
+      flex-direction: column; /* Em telas pequenas, imagem em cima, texto embaixo */
+      text-align: center; /* Centraliza o texto para um layout mais harmonioso */
+  }
+
+  .instructor-photo {
+      width: 12rem;
+      height: 12rem;
+      margin-bottom: 1rem; /* Adiciona um espaço entre a imagem e o texto */
+  }
+}
+
+/* Ajustes para Smartphones */
+@media (max-width: 480px) {
+  .hero-section {
+      min-height: 70vh;
   }
   
-  /* Estilo de Fundo para "O Que Você Vai Aprender" */
-  .o-que-aprender {
-    background-color: #f3f4f6; /* Cor de fundo leve */
+  .hero-overlay h1 {
+      font-size: 2.5rem;
   }
+  
+  .hero-overlay p {
+      font-size: 1.2rem;
+  }
+
+  .cta-button {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.9rem;
+  }
+
+  .instructor-photo {
+      width: 8rem;
+      height: 8rem;
+  }
+
+  .flip-card-front, .flip-card-back {
+      padding: 1rem;
+  }
+
+  .text-6xl {
+      font-size: 2rem;
+  }
+
+  .text-4xl, .text-3xl {
+      font-size: 1.5rem;
+  }
+  
+  .text-2xl {
+      font-size: 1.2rem;
+  }
+}
